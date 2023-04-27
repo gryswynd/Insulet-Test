@@ -39,6 +39,6 @@ soup = BeautifulSoup(response.text, "html.parser")
 best_practices_text = ' '.join([p.text for p in soup.find_all('p')])
 
 # Transcreate content using OpenAI API with best practices context
-transcreation_prompt = f"Transcreate the following content into {target_language} Content: {generated_content}.\n\nFollowing these best practices to decide how to transcreate the content: {best_practices_text}"
+transcreation_prompt = f"Transcreate the following content into {target_language}: {generated_content}.\n\nFollow these best practices to transcreate the content: {best_practices_text}"
 transcreated_content = generate_content(transcreation_prompt)
 print("Transcreated content:", transcreated_content)
